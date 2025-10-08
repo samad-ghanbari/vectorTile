@@ -61,3 +61,7 @@ app.get("/fonts/:fontstack/:range.pbf", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Vector tile server listening on http://localhost:${PORT}`);
 });
+
+// ulimit -n 8192
+// tippecanoe --output-to-directory  tiles -Z0 -z3 -L buildings:buildings.geojson -L natures:natures.geojson -L rivers:rivers.geojson -L roads:roads.geojson -L rails:rails.geojson
+//
