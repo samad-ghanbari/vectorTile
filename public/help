@@ -1,0 +1,5 @@
+tilemaker version 3
+
+./tilemaker --input tehran.osm.pbf --output tiles/ --config ./resources/config-openmaptiles.json --process ./resources/process-openmaptiles.lua
+	 update config and remove shapefiles
+

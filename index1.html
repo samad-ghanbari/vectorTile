@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Vector Tile Map</title>
+    <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+    <!-- <script src="maplibre/maplibre.js"></script> -->
+    <link
+      href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+    <!-- <link href="maplibre/maplibre.css" rel="stylesheet" /> -->
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      const map = new maplibregl.Map({
+        container: "map",
+        style: {
+          version: 8,
+          glyphs: "http://localhost:3000/fonts/{fontstack}/{range}.pbf",
+
+          sources: {
+            openmaptiles: {
+              type: "vector",
+              tiles: ["http://localhost:3000/tiles/{z}/{x}/{y}.pbf"],
+              minzoom: 0,
+              maxzoom: 14,
+              attribution: "&copy;",
+            },
+          },
+
+          layers: [
+            // Background
+            {
+              id: "background",
+              type: "background",
+              paint: { "background-color": "#e0e0d6" },
+            },
+
+            {
+              id: "water",
+              type: "fill",
+              source: "openmaptiles",
+              "source-layer": "water",
+              paint: {
+                "fill-color": "#aadaff",
+              },
+            },
+            {
+              id: "landuse",
+              type: "fill",
+              source: "openmaptiles",
+              "source-layer": "landuse",
+              paint: {
+                "fill-color": "#e0e0e0",
+              },
+            },
+
+            {
+              id: "roads",
+              type: "line",
+              source: "openmaptiles",
+              "source-layer": "transportation",
+              paint: {
+                "line-color": "#555",
+                "line-width": 1,
+              },
+            },
+            {
+              id: "buildings",
+              type: "fill",
+              source: "openmaptiles",
+              "source-layer": "building",
+              paint: {
+                "fill-color": "#d6a77a",
+              },
+            },
+          ],
+        },
+
+        center: [51.41, 35.7], // Tehran
+        zoom: 10,
+      });
+
+      map.addControl(new maplibregl.NavigationControl());
+    </script>
+  </body>
+</html>

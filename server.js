@@ -7,6 +7,20 @@ const PORT = 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use(
+  "/sprites",
+  express.static(path.join(__dirname, "public/sprites"), {
+    setHeaders: (res, filePath) => {
+      if (filePath.endsWith(".json")) {
+        res.setHeader("Content-Type", "application/json");
+      } else if (filePath.endsWith(".png")) {
+        res.setHeader("Content-Type", "image/png");
+      }
+      // res.setHeader("Access-Control-Allow-Origin", "*"); // enable CORS
+    },
+  })
+);
+
 // Path to your tiles folder
 const tilesDir = path.join(__dirname, "public/tiles");
 
@@ -29,6 +43,7 @@ app.get("/tiles/:z/:x/:y.pbf", (req, res) => {
 
     // Set correct content type for vector tiles
     res.setHeader("Content-Type", "application/x-protobuf");
+    res.setHeader("Content-Encoding", "gzip");
 
     // Stream the pbf file
     const readStream = fs.createReadStream(filePath);
@@ -48,13 +63,15 @@ app.get("/fonts/:fontstack/:range.pbf", (req, res) => {
     `${safeRange}.pbf`
   );
 
-  fs.readFile(fontPath, (err, data) => {
+  res.setHeader("Content-Type", "application/x-protobuf");
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+
+  res.sendFile(fontPath, (err) => {
     if (err) {
       console.error("Font PBF not found:", fontPath);
-      return res.status(404).send("Font glyph not found");
+      res.status(err.status || 404).send("Font glyph not found");
     }
-    res.setHeader("Content-Type", "application/x-protobuf");
-    res.send(data);
   });
 });
 
@@ -62,9 +79,20 @@ app.listen(PORT, () => {
   console.log(`Vector tile server listening on http://localhost:${PORT}`);
 });
 
-// sudo apt update
-// sudo apt install tippecanoe
+// ./tilemaker --input tehran.osm.pbf --output tiles/ --config ./resources/config-openmaptiles.json --process ./resources/process-openmaptiles.lua
+// config.json : remove shapefiles and change "compress": "none",
 
-// ulimit -n 8192
-// tippecanoe --output-to-directory  tiles -Z0 -z3 -L buildings:buildings.geojson -L natures:natures.geojson -L rivers:rivers.geojson -L roads:roads.geojson -L rails:rails.geojson
-// tippecanoe --output-to-directory  tiles -Z0 -z3 -L :.geojson -L :.geojson -L :.geojson -L :.geojson
+// https://api.maptiler.com/maps/openstreetmap/sprite.json
+// https://api.maptiler.com/maps/openstreetmap/sprite.png
+
+// debug
+/*
+map.on('idle', () => {
+  const features = map.queryRenderedFeatures();
+  console.log("Rendered features count:", features.length);
+  console.log(features.map(f => f.properties));
+});
+
+ label : name:latin
+ 
+*/
