@@ -303,18 +303,16 @@
     "maputnik:renderer": "mlgljs"
   },
   "center": [51.41, 35.7],
-  "zoom": 12,
+  "zoom": 8,
   "bearing": 0,
   "pitch": 0,
   "sources": {
     "openmaptiles": {
-      "tiles": ["http://localhost:3000/tiles/{z}/{x}/{y}.pbf"],
-      "type": "vector",
-      "minzoom": 0,
-      "maxzoom": 14
+      "url": "http://localhost:3000/tiles/{z}/{x}/{y}.pbf",
+      "type": "vector"
     }
   },
-  "sprite": "http://localhost:3000/sprites/sprite",
+  "sprite": "https://api.maptiler.com/maps/openstreetmap/sprite",
   "glyphs": "http://localhost:3000/fonts/{fontstack}/{range}.pbf",
   "layers": [
     {
@@ -639,10 +637,7 @@
       "minzoom": 9,
       "filter": ["all", ["in", "subclass", "marsh"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(60, 100%, 50%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(60, 100%, 50%)" }
     },
     {
       "id": "Park",
@@ -652,10 +647,7 @@
       "minzoom": 13,
       "filter": ["all", ["==", "subclass", "park"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(125, 83%, 88%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(125, 83%, 88%)" }
     },
     {
       "id": "Stadium",
@@ -695,10 +687,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "subclass", "garden"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(91, 60%, 81%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(91, 60%, 81%)" }
     },
     {
       "id": "Garden pattern",
@@ -719,10 +708,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "subclass", "wood"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(102, 36%, 72%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(102, 36%, 72%)" }
     },
     {
       "id": "Tidalflat",
@@ -732,10 +718,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "subclass", "tidalflat"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(28, 19%, 84%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(28, 19%, 84%)" }
     },
     {
       "id": "Wetland and swamp",
@@ -745,10 +728,7 @@
       "minzoom": 9,
       "filter": ["all", ["in", "subclass", "swamp", "wetland"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(102, 36%, 72%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(102, 36%, 72%)" }
     },
     {
       "id": "Scree",
@@ -758,10 +738,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "subclass", "scree"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(30, 35%, 90%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(30, 35%, 90%)" }
     },
     {
       "id": "Sand",
@@ -771,10 +748,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "subclass", "sand"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(45, 70%, 87%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(45, 70%, 87%)" }
     },
     {
       "id": "Recreation ground",
@@ -784,10 +758,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "subclass", "recreation_ground"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(126, 100%, 92%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(126, 100%, 92%)" }
     },
     {
       "id": "Orchard and vineyard",
@@ -800,10 +771,7 @@
         ["in", "subclass", "orchard", "plant_nursery", "vineyard"]
       ],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(109, 48%, 76%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(109, 48%, 76%)" }
     },
     {
       "id": "Meadow",
@@ -816,10 +784,7 @@
         ["in", "subclass", "meadow", "reedbed", "saltmarsh", "village_green"]
       ],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(91, 60%, 81%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(91, 60%, 81%)" }
     },
     {
       "id": "Mangrove",
@@ -829,10 +794,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "subclass", "mangrove"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(80, 35%, 76%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(80, 35%, 76%)" }
     },
     {
       "id": "Heath",
@@ -842,10 +804,7 @@
       "minzoom": 9,
       "filter": ["all", ["in", "subclass", "heath"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(63, 43%, 74%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(63, 43%, 74%)" }
     },
     {
       "id": "Forest",
@@ -855,10 +814,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "subclass", "forest"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(102, 36%, 72%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(102, 36%, 72%)" }
     },
     {
       "id": "Farmland",
@@ -868,10 +824,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "subclass", "farmland"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(64, 47%, 89%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(64, 47%, 89%)" }
     },
     {
       "id": "Farm",
@@ -881,10 +834,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "subclass", "farm"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(35, 75%, 85%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(35, 75%, 85%)" }
     },
     {
       "id": "Scrub",
@@ -894,10 +844,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "subclass", "scrub"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(80, 35%, 76%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(80, 35%, 76%)" }
     },
     {
       "id": "Dune",
@@ -907,10 +854,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "subclass", "dune"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(45, 70%, 87%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(45, 70%, 87%)" }
     },
     {
       "id": "Beach",
@@ -920,10 +864,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "subclass", "beach"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(48, 100%, 86%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(48, 100%, 86%)" }
     },
     {
       "id": "Bare rock",
@@ -933,10 +874,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "subclass", "bare_rock"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(30, 35%, 90%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(30, 35%, 90%)" }
     },
     {
       "id": "Allotments",
@@ -946,10 +884,7 @@
       "minzoom": 9,
       "filter": ["all", ["==", "subclass", "allotments"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(102, 36%, 82%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(102, 36%, 82%)" }
     },
     {
       "id": "Landcover patterns",
@@ -1069,10 +1004,7 @@
         ["in", "subclass", "grass", "grassland", "golf_course"]
       ],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(91, 60%, 81%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(91, 60%, 81%)" }
     },
     {
       "id": "Landcover outline",
@@ -1124,10 +1056,7 @@
       "source-layer": "landcover",
       "minzoom": 5,
       "filter": ["all", ["in", "class", "ice"]],
-      "paint": {
-        "fill-antialias": false,
-        "fill-color": "hsl(180, 28%, 90%)"
-      }
+      "paint": { "fill-antialias": false, "fill-color": "hsl(180, 28%, 90%)" }
     },
     {
       "id": "Glacier outline",
@@ -1279,10 +1208,7 @@
       "source-layer": "water",
       "filter": ["all", ["==", "intermittent", 1]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-color": "hsl(205, 91%, 83%)",
-        "fill-opacity": 0.85
-      }
+      "paint": { "fill-color": "hsl(205, 91%, 83%)", "fill-opacity": 0.85 }
     },
     {
       "id": "Water",
@@ -2606,10 +2532,7 @@
       "source-layer": "transportation",
       "filter": ["all", ["==", "$type", "Polygon"], ["==", "class", "pier"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(42, 49%, 93%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(42, 49%, 93%)" }
     },
     {
       "id": "Pier road",
@@ -2639,10 +2562,7 @@
       "minzoom": 11,
       "filter": ["all", ["==", "$type", "Polygon"], ["==", "class", "bridge"]],
       "layout": { "visibility": "visible" },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "hsl(0, 0%, 72%)"
-      }
+      "paint": { "fill-antialias": true, "fill-color": "hsl(0, 0%, 72%)" }
     },
     {
       "id": "Platform area",
@@ -5666,13 +5586,8 @@
       "layout": {
         "symbol-placement": "line",
         "symbol-spacing": 400,
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Regular", "Noto Sans Regular"],
         "text-max-width": 5,
         "text-size": {
           "stops": [
@@ -5698,13 +5613,8 @@
       "filter": ["all", ["==", "$type", "LineString"]],
       "layout": {
         "symbol-placement": "line",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Regular", "Noto Sans Regular"],
         "text-max-width": 5,
         "text-size": 12,
         "visibility": "visible"
@@ -5724,13 +5634,8 @@
       "minzoom": 15,
       "filter": ["all", ["==", "$type", "Point"], ["!=", "class", "ocean"]],
       "layout": {
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Regular", "Open Sans Light"],
         "text-max-width": 5,
         "text-size": 11,
         "visibility": "visible"
@@ -5751,7 +5656,7 @@
         "symbol-avoid-edges": false,
         "text-allow-overlap": false,
         "text-field": "{housenumber}",
-        "text-font": ["Noto Sans"],
+        "text-font": ["Noto Sans Regular"],
         "text-ignore-placement": false,
         "text-line-height": -0.15,
         "text-padding": 3,
@@ -5803,13 +5708,8 @@
         ],
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "top",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Bold"],
         "text-max-width": 9,
         "text-offset": [0, 1],
         "text-padding": 2,
@@ -5877,13 +5777,8 @@
         "icon-image": "{subclass}",
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "top",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Bold"],
         "text-max-width": 9,
         "text-offset": [0, 0.8],
         "text-padding": 2,
@@ -5921,13 +5816,8 @@
         "icon-text-fit": "none",
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "center",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Bold Italic", "Noto Sans Regular"],
         "text-max-width": 14,
         "text-offset": [0, 0],
         "text-padding": 2,
@@ -5962,13 +5852,8 @@
         "icon-text-fit": "none",
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "center",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold Italic", "Noto Sans Regular"],
         "text-max-width": 9,
         "text-offset": [0, 0],
         "text-padding": 2,
@@ -6000,13 +5885,8 @@
         "icon-image": "{subclass}",
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "top",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Bold"],
         "text-max-width": 9,
         "text-offset": [0, 1.2],
         "text-padding": 2,
@@ -6050,13 +5930,8 @@
         "icon-image": "{subclass}",
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "top",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold Italic", "Noto Sans Bold"],
         "text-max-width": 9,
         "text-offset": [0, 1.2],
         "text-padding": 2,
@@ -6094,13 +5969,8 @@
         "icon-image": "ferry",
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "top",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Regular", "Noto Sans Regular"],
         "text-max-width": 9,
         "text-offset": [0, 0.7],
         "text-padding": 2,
@@ -6148,13 +6018,8 @@
         "icon-image": "{subclass}",
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "top",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Bold"],
         "text-max-width": 9,
         "text-offset": [0, 1],
         "text-padding": 2,
@@ -6206,13 +6071,8 @@
         "icon-image": "{subclass}",
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "top",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Bold"],
         "text-max-width": 9,
         "text-offset": [0, 0.8],
         "text-padding": 2,
@@ -6263,13 +6123,8 @@
         "icon-image": "{subclass}",
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "top",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Bold"],
         "text-max-width": 9,
         "text-offset": [0, 0.8],
         "text-padding": 2,
@@ -6304,13 +6159,8 @@
         "icon-allow-overlap": false,
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "center",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Bold"],
         "text-max-width": 9,
         "text-offset": [0, 1.2],
         "text-padding": 2,
@@ -6348,13 +6198,8 @@
         "icon-image": "{subclass}",
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "top",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Bold"],
         "text-max-width": 9,
         "text-offset": [0, 1.2],
         "text-padding": 2,
@@ -6403,13 +6248,8 @@
         "icon-image": "{class}",
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "top",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Regular", "Noto Sans Regular"],
         "text-max-width": 9,
         "text-offset": [0, 1.2],
         "text-padding": 2,
@@ -6469,13 +6309,8 @@
         "icon-image": "camping",
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "top",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Bold"],
         "text-max-width": 9,
         "text-offset": [0, 1.2],
         "text-padding": 2,
@@ -6511,13 +6346,8 @@
         "icon-image": "{subclass}",
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "top",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Bold"],
         "text-max-width": 9,
         "text-offset": [0, 0.6],
         "text-optional": true,
@@ -6556,13 +6386,8 @@
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-allow-overlap": false,
         "text-anchor": "top",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Bold"],
         "text-max-width": 9,
         "text-offset": [0, 0.8],
         "text-padding": 2,
@@ -6599,13 +6424,8 @@
         "icon-text-fit": "none",
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "top",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Regular", "Noto Sans Regular"],
         "text-max-width": 14,
         "text-padding": 2,
         "text-size": {
@@ -6648,13 +6468,8 @@
         "icon-text-fit": "none",
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "center",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Bold", "Noto Sans Bold"],
         "text-max-width": 14,
         "text-padding": 2,
         "text-size": 11,
@@ -6682,13 +6497,8 @@
         "icon-allow-overlap": false,
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "top",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold Italic", "Noto Sans Italic"],
         "text-max-width": 6,
         "text-padding": 2,
         "text-size": {
@@ -6722,13 +6532,8 @@
         "icon-allow-overlap": false,
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "top",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold Italic", "Noto Sans Italic"],
         "text-max-width": 9,
         "text-offset": [0, 1.1],
         "text-padding": 2,
@@ -6770,13 +6575,8 @@
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-allow-overlap": false,
         "text-anchor": "center",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Bold", "Noto Sans Bold"],
         "text-max-width": 14,
         "text-offset": [0, 0.5],
         "text-padding": 2,
@@ -6797,8 +6597,8 @@
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "transportation",
-      "minzoom": 14,
-      "filter": ["all", ["==", "oneway", 1]],
+      "minzoom": 15,
+      "filter": ["all", ["==", "oneway", 1], ["==", "class", "path"]],
       "layout": {
         "icon-image": "oneway-path",
         "icon-padding": 2,
@@ -6921,13 +6721,8 @@
       "layout": {
         "symbol-placement": "line",
         "text-anchor": "center",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Regular", "Noto Sans Regular"],
         "text-offset": [0, 0],
         "text-size": ["interpolate", ["linear"], ["zoom"], 14, 10, 18, 12]
       },
@@ -6951,13 +6746,8 @@
         "symbol-placement": "line",
         "symbol-spacing": ["step", ["zoom"], 250, 17, 400, 20, 800, 21, 1100],
         "text-anchor": "center",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["BYekan"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Regular", "Noto Sans Regular"],
         "text-offset": [0, 0],
         "text-size": {
           "base": 1,
@@ -7003,7 +6793,7 @@
         },
         "symbol-spacing": 560,
         "text-field": "{ref}",
-        "text-font": ["Noto Sans"],
+        "text-font": ["Noto Sans Regular"],
         "text-rotation-alignment": "viewport",
         "text-size": {
           "stops": [
@@ -7012,7 +6802,7 @@
             [17, 12]
           ]
         },
-        "visibility": "none"
+        "visibility": "visible"
       },
       "paint": { "text-color": "hsl(0, 0%, 23%)" }
     },
@@ -7046,7 +6836,7 @@
         },
         "symbol-spacing": 560,
         "text-field": "{ref}",
-        "text-font": ["Noto Sans"],
+        "text-font": ["Noto Sans Regular"],
         "text-rotation-alignment": "viewport",
         "text-size": {
           "stops": [
@@ -7055,7 +6845,7 @@
             [17, 12]
           ]
         },
-        "visibility": "none"
+        "visibility": "visible"
       },
       "paint": { "text-color": "hsl(69, 100%, 12%)" }
     },
@@ -7089,7 +6879,7 @@
         },
         "symbol-spacing": 560,
         "text-field": "{ref}",
-        "text-font": ["Noto Sans"],
+        "text-font": ["Noto Sans Regular"],
         "text-rotation-alignment": "viewport",
         "text-size": {
           "stops": [
@@ -7098,7 +6888,7 @@
             [17, 12]
           ]
         },
-        "visibility": "none"
+        "visibility": "visible"
       },
       "paint": { "text-color": "hsl(36, 100%, 15%)" }
     },
@@ -7132,7 +6922,7 @@
         },
         "symbol-spacing": 760,
         "text-field": "{ref}",
-        "text-font": ["Noto Sans"],
+        "text-font": ["Noto Sans Regular"],
         "text-keep-upright": true,
         "text-max-width": 10,
         "text-optional": false,
@@ -7144,7 +6934,7 @@
             [17, 12]
           ]
         },
-        "visibility": "none"
+        "visibility": "visible"
       },
       "paint": { "text-color": "hsl(338, 87%, 21%)" }
     },
@@ -7170,7 +6960,7 @@
             [11, "{name}"]
           ]
         },
-        "text-font": ["Noto Sans"],
+        "text-font": ["Open Sans Italic", "Noto Sans Italic"],
         "text-max-width": 9,
         "text-offset": [0, 0.6],
         "text-optional": true,
@@ -7200,13 +6990,8 @@
       "layout": {
         "symbol-placement": "line",
         "symbol-sort-key": ["to-number", ["get", "rank"]],
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Italic", "Noto Sans Italic"],
         "text-size": {
           "stops": [
             [15, 9],
@@ -7230,14 +7015,14 @@
       "filter": ["all", ["==", "class", "gate"]],
       "layout": {
         "text-field": "{ref}",
-        "text-font": ["Noto Sans"],
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Regular"],
         "text-size": {
           "stops": [
             [17, 9],
             [19, 15]
           ]
         },
-        "visibility": "none"
+        "visibility": "visible"
       },
       "paint": {
         "text-color": "hsl(0, 0%, 53%)",
@@ -7259,13 +7044,8 @@
       "layout": {
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "symbol-spacing": 150,
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Regular"],
         "text-max-width": 10,
         "text-size": {
           "base": 1.2,
@@ -7311,13 +7091,8 @@
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "symbol-spacing": 150,
         "text-allow-overlap": false,
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold Italic", "Noto Sans Italic"],
         "text-max-width": {
           "stops": [
             [12, 5],
@@ -7351,13 +7126,8 @@
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "symbol-spacing": 150,
         "text-allow-overlap": false,
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold Italic", "Noto Sans Italic"],
         "text-size": 12,
         "visibility": "visible"
       },
@@ -7391,13 +7161,8 @@
         "icon-image": "{subclass}",
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "top",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Bold", "Noto Sans Bold"],
         "text-max-width": 6,
         "text-offset": [0, 1.2],
         "text-padding": 2,
@@ -7437,7 +7202,7 @@
             [12, "{name} {ele}m"]
           ]
         },
-        "text-font": ["Noto Sans"],
+        "text-font": ["Open Sans Regular", "Noto Sans Regular"],
         "text-line-height": 1.1,
         "text-max-width": 6,
         "text-offset": [0, 0.5],
@@ -7466,7 +7231,7 @@
             [12, "{name} {ele}m"]
           ]
         },
-        "text-font": ["Noto Sans"],
+        "text-font": ["Open Sans Regular", "Noto Sans Regular"],
         "text-line-height": 1.1,
         "text-max-width": 6,
         "text-offset": [0, 0.5],
@@ -7489,13 +7254,8 @@
       "filter": ["all", ["==", "class", "village"]],
       "layout": {
         "symbol-sort-key": ["to-number", ["get", "rank"]],
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Regular"],
         "text-max-width": 8,
         "text-size": {
           "base": 1.2,
@@ -7523,13 +7283,8 @@
       "layout": {
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "bottom",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Regular"],
         "text-max-width": 8,
         "text-offset": [0, 0],
         "text-size": {
@@ -7558,13 +7313,8 @@
       "filter": ["all", ["==", "class", "state"], ["<", "rank", 3]],
       "layout": {
         "symbol-sort-key": ["to-number", ["get", "rank"]],
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Regular", "Noto Sans Bold"],
         "text-letter-spacing": 0,
         "text-padding": 2,
         "text-size": {
@@ -7603,13 +7353,8 @@
         "icon-optional": false,
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "bottom",
-        "text-field": [
-          "coalesce",
-          ["get", "name:fa"],
-          ["get", "name"],
-          ["get", "name:latin"]
-        ],
-        "text-font": ["Noto Sans"],
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Regular"],
         "text-max-width": 8,
         "text-offset": [0, 0],
         "text-size": {
@@ -7654,8 +7399,8 @@
         "icon-size": 1,
         "symbol-sort-key": ["to-number", ["get", "rank"]],
         "text-anchor": "bottom",
-        "text-field": "{name:fa}",
-        "text-font": ["Noto Sans"],
+        "text-field": "{name:en}",
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Regular"],
         "text-max-width": 8,
         "text-offset": [0, 0],
         "text-size": {
@@ -7689,8 +7434,8 @@
       "filter": ["all", ["==", "class", "country"], ["!=", "iso_a2", "VA"]],
       "layout": {
         "symbol-sort-key": ["to-number", ["get", "rank"]],
-        "text-field": "{name:fa}",
-        "text-font": ["Noto Sans"],
+        "text-field": "{name:en}",
+        "text-font": ["Open Sans Semi Bold", "Noto Sans Bold"],
         "text-max-width": 6.25,
         "text-size": [
           "interpolate",

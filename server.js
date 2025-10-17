@@ -75,6 +75,43 @@ app.get("/fonts/:fontstack/:range.pbf", (req, res) => {
   });
 });
 
+app.get("/site/:id", (req, res) => {
+  const { id } = req.params;
+  res.setHeader("Content-Type", "application/json");
+  res.send({ id: id });
+});
+
+app.get("/sitex/geojson", (req, res) => {
+  const geojson = {
+    type: "FeatureCollection",
+    features: [
+      {
+        type: "Feature",
+        geometry: {
+          type: "Point",
+          coordinates: [51.4878798, 35.7781818],
+        },
+        properties: {
+          name: "مرکز لویزان",
+        },
+      },
+      {
+        type: "Feature",
+        geometry: {
+          type: "Point",
+          coordinates: [50.9789704, 35.8250757],
+        },
+        properties: {
+          name: "مرکز بهشتی",
+        },
+      },
+    ],
+  };
+
+  res.setHeader("Content-Type", "application/json");
+  res.send(geojson);
+});
+
 app.listen(PORT, () => {
   console.log(`Vector tile server listening on http://localhost:${PORT}`);
 });
@@ -94,5 +131,13 @@ map.on('idle', () => {
 });
 
  label : name:latin
+ 
+https://maplibre.org/maputnik/?layer=2008948339%7E0#0.8/0/0
+
+Oneway path layer
+  remove : , ["==", "class", "path"] only oneway = 1
+
+ numbers in rectangles are roads ref
+ // in primary trunk secondary .... set visibility : none
  
 */
