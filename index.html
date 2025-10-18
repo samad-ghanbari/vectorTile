@@ -104,6 +104,22 @@
       //   });
       // });
 
+      const img1 = new Image();
+      const img2 = new Image();
+      const img3 = new Image();
+      img1.src = "sitex.png";
+      img1.onload = () => {
+        map.addImage("sitex", img1);
+      };
+      img2.src = "exchange.png";
+      img2.onload = () => {
+        map.addImage("exchange-icon", img2);
+      };
+      img3.src = "site.png";
+      img3.onload = () => {
+        map.addImage("site-icon", img3);
+      };
+
       map.on("load", () => {
         map.addSource("sitex-source", {
           type: "geojson",
@@ -118,6 +134,8 @@
                 },
                 properties: {
                   name: "مرکز لویزان",
+                  type: "exchange",
+                  id: 1,
                 },
               },
               {
@@ -128,6 +146,20 @@
                 },
                 properties: {
                   name: "مرکز بهشتی",
+                  type: "exchange",
+                  id: 2,
+                },
+              },
+              {
+                type: "Feature",
+                geometry: {
+                  type: "Point",
+                  coordinates: [51.46, 35.8],
+                },
+                properties: {
+                  name: "سایت مجتمع یاس",
+                  type: "site",
+                  id: 3,
                 },
               },
             ],
@@ -138,9 +170,18 @@
           id: "sitex-layer",
           type: "symbol",
           source: "sitex-source",
+          minzoom: 10,
           layout: {
-            "icon-image": "public_building",
-            "icon-size": 2,
+            "icon-image": [
+              "match",
+              ["get", "type"],
+              "exchange",
+              "exchange-icon",
+              "site",
+              "site-icon",
+              "sitex",
+            ],
+            "icon-size": 1,
             "text-field": ["get", "name"],
             "text-font": ["Noto Sans"],
             "text-size": 18,
@@ -153,6 +194,19 @@
             "text-halo-color": "hsla(0, 0%, 100%, 0.8)",
             "text-halo-width": 2,
           },
+        });
+
+        map.on("click", "sitex-layer", (e) => {
+          const coordinates = e.features[0].geometry.coordinates.slice();
+          const name = e.features[0].properties.name;
+          const id = e.features[0].properties.id;
+
+          new maplibregl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(
+              `<strong style='display:block; text-align:center; color: darkblue;'>${name}</strong><button style=' display:block' onclick="window.location.href='/sitex/${id}'" >نمایش جزئیات</button>`
+            )
+            .addTo(map);
         });
       });
 
